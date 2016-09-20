@@ -29,7 +29,7 @@ setup(
     download_url='https://github.com/gwongz/flask-apiblueprint/tarball/0.2',
     platforms='any',
     install_requires=[
-        'Flask'
+        'Flask', 'six >= 1.10.0',
     ],
     test_suite='test_apiblueprint',
     classifiers=[

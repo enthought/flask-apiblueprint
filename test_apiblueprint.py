@@ -118,8 +118,8 @@ class TestAPIBlueprintIntegration(TestAPIBlueprint):
 
         self.app.register_blueprint(inherited_bp)
         self.assertEqual(self.client.get('/v2/foo').data, self.client.get('v1/foo').data)
-        self.assertEqual(self.client.get('/v2/bar').data, 'Overloaded Bar')
-        self.assertEqual(self.client.get('/v1/bar').data, 'Bar')
+        self.assertEqual(self.client.get('/v2/bar').data, b'Overloaded Bar')
+        self.assertEqual(self.client.get('/v1/bar').data, b'Bar')
 
     def test_inherited_routes(self):
         inherited_bp = APIBlueprint('bp_v2', __name__, url_prefix='/v2', inherit_from=self.bp)
